@@ -49,7 +49,7 @@ function applyEventListeners(elements) {
         e.preventDefault();
         const elapsed = Math.ceil(Date.now() - window.state.startTime)
         logToServer({
-            eventType: "timeTaken",
+            eventType: "elapsedTime",
             time: elapsed
         })
     })
@@ -78,6 +78,8 @@ function logToServer(data) {
         websiteUrl: window.location.href,
         ...data
     };
+
+    console.log(dataToPost)
 
     return fetch('http://localhost:3030/log', {
         method: "post",

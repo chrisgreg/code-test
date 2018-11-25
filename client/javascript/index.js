@@ -79,8 +79,6 @@ function logToServer(data) {
         ...data
     };
 
-    console.log(dataToPost)
-
     return fetch('http://localhost:3030/log', {
         method: "post",
         body: JSON.stringify(dataToPost),

@@ -72,5 +72,15 @@ type Dimension struct {
 ```
 
 
+# Notes:
+
+## Run with
+`go run main.go hash.go`
+
+- I was testing the client by running `python -m SimpleHTTPServer` in the `/client` dir
+- Had I had more time I would've written more tests for the server including integration tests for the client
+- I chose not to use jQuery as I think vanilla JS contains enough functionality
+- It wasn't specified where/when to print the hash value of the website URL so I did it each time a POST request was made
+- I recognise Go methods could be used to handle the Session and Data functionality but I wasn't sure of the Pros/Cons of the approach due to limited Golang experience - testing would've likely been easier
 
 

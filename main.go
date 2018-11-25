@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
+	"log"
 	"net/http"
 )
 
@@ -42,7 +43,9 @@ func main() {
 	http.HandleFunc("/log", logHandler)
 
 	// Start server
-	http.ListenAndServe(":3030", nil)
+	addr := ":3030"
+	log.Println("Server listening on:", addr)
+	log.Fatal(http.ListenAndServe(addr, nil))
 }
 
 func logHandler(w http.ResponseWriter, r *http.Request) {
